@@ -20,3 +20,13 @@ before_script:
 - julia -e 'using Pkg; pkg"add BinaryProvider"; pkg"add BinaryBuilder"; Pkg.build()'
 script:
 - julia build_tarballs.jl
+deploy:
+  provider: releases
+  api_key:
+    secure: mWHz9/wsAPO0r/UyQ4sLFw9aSEjJNMxYzt6FsUFwmhbeH4uG8dsMr+cl2xFhnTGtXtZ2z8VQmd9HGn6LlB2OjtK7lBWZelX2sbgB4PGLxQIh8pqSbVq+7aqocmI5tytlCSAdLUEszq+bqVZXfabz9yDH94VRbcp4LPrr8vueCTHN4+mX6kwgP2Q4rOan+IQgGpchHOzcQuzxvM4BiGH68q+BznHpOck3dK3gUYNpZgPO6/tBVUhnZFszTJOmudyAoKn2HNQpiMJToGKTBHSQ4DruU6WUAzc45fzHQ+7CwonLzfHNEvuN+DXo6WkKnT2DQiQwTRw5DEO1offR9+ouGWFiFuJoiA42Mt4K6zCI2Ox2S3osgT7jR0x/oZmY86U2BEaRtAbtgJ7fJuZOggzeTHn1x0F/vyHOGFI3aNLensrwycSDJtN7T28OA7FBngOrG4xI40u1aWWIBIe/Qe9y/lwMxAE4kLVWtaVP+BJqisiETdvt4Gh2CJItdZhtoxNOt9SSAUibfx8J0xu4xrdeOhjU/FDQjz6LxgsxaMM//kAv2QR40DG11Vwb1P84LR909ZQasE+DARQRioc00/TWNma8YQnTr1ckqR3G2yfMEqevgklyEAJS2YFUU548yvjlqzWMfJEI58An/ace7Op6wTDOCWI3Jk2WJTC3GGB/uY4=
+  file_glob: true
+  file: products/*
+  skip_cleanup: true
+  on:
+    repo: yukota/help2manBuilder
+    tags: true
