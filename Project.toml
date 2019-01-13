@@ -1,0 +1,7 @@
+name = "help2manBuilder"
+uuid = "1ec4d998-16f4-11e9-3f55-f735ce646c4c"
+authors = ["YuK_Ota <whitenightwinter@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+BinaryBuilder = "12aac903-9f7c-5d81-afc2-d9565ea332ae"
